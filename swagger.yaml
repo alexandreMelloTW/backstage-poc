@@ -1,0 +1,106 @@
+openapi: 3.0.0
+info:
+  description: Bank's Microservice from Natura Bank.
+  license:
+    name: ISC
+  title: Banks API
+  version: 1.0.0
+paths:
+  /banking-platform/payment-rules:
+    get:
+      operationId: PaymentRulesEndpointRetrievePaymentRules
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentRules'
+        '500':
+          description: Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+              examples:
+                response:
+                  value:
+                    code: InternalError
+                    message: Internal server error.
+      description: ''
+servers:
+  - url: /
+components:
+  schemas:
+    Holiday:
+      description: ''
+      properties:
+        date:
+          type: string
+          description: ''
+        description:
+          type: string
+          description: ''
+      type: object
+      required:
+        - date
+        - description
+    Time:
+      description: ''
+      properties:
+        inSeconds:
+          type: number
+          format: double
+          description: ''
+      type: object
+      required:
+        - inSeconds
+    PaymentWindow:
+      description: ''
+      properties:
+        typeBarcode:
+          enum:
+            - CONCESSIONAIRE
+            - BANKING
+            - TAXES
+          type: string
+          description: ''
+        from:
+          $ref: '#/components/schemas/Time'
+        to:
+          $ref: '#/components/schemas/Time'
+      type: object
+      required:
+        - typeBarcode
+        - from
+        - to
+    PaymentRules:
+      description: ''
+      properties:
+        holidays:
+          type: array
+          items:
+            $ref: '#/components/schemas/Holiday'
+          description: ''
+        paymentWindow:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentWindow'
+          description: ''
+      type: object
+      required:
+        - holidays
+        - paymentWindow
+    ApiError:
+      description: ''
+      properties:
+        code:
+          type: string
+          description: ''
+        message:
+          type: string
+          description: ''
+      type: object
+      required:
+        - code
+        - message
