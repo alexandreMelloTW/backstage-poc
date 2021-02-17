@@ -8,4 +8,4 @@ spec:
   lifecycle: production
   owner: petstore@example.com
   definition:
-    $yaml: ./swagger.yaml
+    $text: ./swagger.yaml
