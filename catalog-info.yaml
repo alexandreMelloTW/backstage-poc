@@ -1,11 +1,23 @@
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: petstore
-  description: The Petstore API
-spec:
-  type: openapi
-  lifecycle: production
-  owner: petstore@example.com
-  definition:
-    $text: ./swagger.yaml
+apiVersion: backstage.io/v1alpha1	apiVersion: backstage.io/v1alpha1
+kind: API	kind: API
+metadata:	metadata:
+  name: artist-api	  name: petstore
+  description: Retrieve artist details	  description: The Petstore API
+spec:	spec:
+  type: openapi	  type: openapi
+  lifecycle: production	  lifecycle: production
+  owner: artist-relations-team	  owner: petstore@example.com
+  system: artist-engagement-portal	  definition:
+  definition: |	    $text: https://petstore.swagger.io/v2/swagger.json
+    openapi: "3.0.0"	
+    info:	
+      version: 1.0.0	
+      title: Artist API	
+      license:	
+        name: MIT	
+    servers:	
+      - url: http://artist.spotify.net/v1	
+    paths:	
+      /artists:	
+        get:	
+          summary: List all artists
