@@ -2,8 +2,6 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: backstage-poc
-  annotations:
-    github.com/project-slug: alexandreMelloTW/backstage-poc
   namespace: POC
 spec:
   type: openapi
@@ -12,5 +10,5 @@ spec:
   system: backstage-poc
   providesApis:
     - backstage-poc-api
-   definition:
+  definition:
     $text: ./swagger.yaml
