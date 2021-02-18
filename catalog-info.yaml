@@ -1,14 +1,14 @@
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: backstage-poc
-  namespace: POC
-spec:
-  type: openapi
-  lifecycle: production
-  owner: alexandre
-  system: backstage-poc
-  providesApis:
-    - backstage-poc-api
-  definition:
+apiVersion: backstage.io/v1alpha1	
+kind: API	
+metadata:	
+  name: poc-api	
+  description: POC for Backstage.io	
+spec:	
+  type: openapi	
+  lifecycle: production	
+  owner: alexandre	
+  system: backstage-poc	
+  providesApis:	
+    - backstage-poc-api	
+  definition: 	
     $text: ./swagger.yaml
