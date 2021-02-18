@@ -1,11 +1,16 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: backstage-poc
   annotations:
     github.com/project-slug: alexandreMelloTW/backstage-poc
-  namespace: default
+  namespace: POC
 spec:
-  type: other
-  lifecycle: unknown
-  owner: User:Alexandre
+  type: openapi
+  lifecycle: production
+  owner: alexandre
+  system: backstage-poc
+  providesApis:
+    - backstage-poc-api
+   definition:
+    $text: ./swagger.yaml
