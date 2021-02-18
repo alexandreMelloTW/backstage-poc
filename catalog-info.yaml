@@ -8,7 +8,5 @@ spec:
   lifecycle: production	
   owner: alexandre	
   system: backstage-poc	
-  providesApis:	
-    - backstage-poc-api	
   definition: 	
     $text: ./swagger.yaml
