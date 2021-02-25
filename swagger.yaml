@@ -6,7 +6,7 @@ info:
   title: Banks API
   version: 1.0.0
 paths:
-  /banking-platform/payment-rules:
+  /banking-platform/payment:
     get:
       operationId: PaymentRulesEndpointRetrievePaymentRules
       responses:
