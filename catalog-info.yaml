@@ -2,7 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: API	
 metadata:	
   name: poc-api	
-  description: POC for Backstage.io	
+  description: POC for Backstage.io
+  annotations:
+    backstage.io/techdocs-ref: value
 spec:	
   type: openapi	
   lifecycle: production	
